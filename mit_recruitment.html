@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MIT Team · VKids Trend — 你的事业，从这里开始</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --p:#1a1a2e;--p2:#16213e;
+  --accent:#c8a96e;--accent2:#e8c99e;
+  --green:#2d9b6f;--green2:#e1f5ee;--green3:#085041;
+  --white:#fff;--muted:rgba(255,255,255,0.55);
+  --border:rgba(200,169,110,0.2);
+  --r:12px;--r2:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--p);color:var(--white);overflow-x:hidden;}
+h1,h2,h3{font-family:'Playfair Display',serif;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:.9rem 2rem;display:flex;align-items:center;justify-content:space-between;background:rgba(26,26,46,0.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:'Playfair Display',serif;font-size:17px;color:var(--accent);letter-spacing:.5px;}
+.nav-links{display:flex;gap:1.5rem;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .2s;}
+.nav-links a:hover{color:var(--accent);}
+.nav-cta{background:var(--accent);color:var(--p);padding:.45rem 1.2rem;border-radius:30px;font-size:13px;font-weight:500;border:none;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;}
+.nav-cta:hover{background:var(--accent2);}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:7rem 2rem 4rem;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(200,169,110,0.07) 0%,transparent 70%);}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(200,169,110,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(200,169,110,0.04) 1px,transparent 1px);background-size:56px 56px;}
+.hero-content{position:relative;z-index:1;max-width:680px;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(200,169,110,0.35);padding:.4rem 1rem;border-radius:30px;font-size:11px;color:var(--accent);letter-spacing:.6px;margin-bottom:2rem;text-transform:uppercase;}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+h1.hero-title{font-size:clamp(2rem,5.5vw,3.8rem);line-height:1.2;margin-bottom:1.25rem;}
+h1.hero-title em{font-style:italic;color:var(--accent);}
+.hero-sub{font-size:15px;color:var(--muted);line-height:1.8;max-width:500px;margin:0 auto 2.5rem;}
+.btn-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.btn-gold{background:var(--accent);color:var(--p);padding:.8rem 1.8rem;border-radius:30px;font-size:14px;font-weight:500;border:none;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s;font-family:'DM Sans',sans-serif;}
+.btn-gold:hover{background:var(--accent2);transform:translateY(-2px);}
+.btn-ghost{border:1px solid rgba(200,169,110,0.4);color:var(--accent);padding:.8rem 1.8rem;border-radius:30px;font-size:14px;background:transparent;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s;font-family:'DM Sans',sans-serif;}
+.btn-ghost:hover{background:rgba(200,169,110,0.08);}
+.stats-row{display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap;margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,0.07);}
+.stat .num{font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--accent);}
+.stat .lbl{font-size:11px;color:var(--muted);margin-top:4px;letter-spacing:.3px;}
+
+/* SECTIONS */
+section{padding:5rem 1.5rem;}
+.inner{max-width:860px;margin:0 auto;}
+.sec-badge{display:inline-block;background:rgba(200,169,110,0.1);border:1px solid rgba(200,169,110,0.25);color:var(--accent);font-size:10px;font-weight:500;padding:3px 12px;border-radius:20px;letter-spacing:.8px;text-transform:uppercase;margin-bottom:.75rem;}
+.sec-title{font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.3;margin-bottom:.6rem;}
+.sec-sub{font-size:14px;color:var(--muted);line-height:1.8;max-width:520px;}
+.gold-line{width:40px;height:2px;background:var(--accent);margin:1.25rem 0;border-radius:2px;}
+
+/* CHAT */
+#chat-section{background:var(--p2);}
+.chat-box{margin-top:2rem;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;}
+.chat-hdr{background:rgba(200,169,110,0.1);padding:.85rem 1.25rem;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--border);}
+.chat-av{width:32px;height:32px;border-radius:50%;background:var(--accent);color:var(--p);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.chat-hdr-name{font-size:13px;font-weight:500;}
+.chat-hdr-st{font-size:11px;color:var(--muted);}
+.online-dot{width:6px;height:6px;border-radius:50%;background:#2d9b6f;display:inline-block;margin-right:4px;}
+.msgs{padding:1.25rem;display:flex;flex-direction:column;gap:10px;min-height:240px;max-height:320px;overflow-y:auto;}
+.msg{display:flex;gap:8px;align-items:flex-end;}
+.msg.user{flex-direction:row-reverse;}
+.bubble{max-width:78%;padding:.6rem 1rem;border-radius:16px;font-size:13px;line-height:1.6;}
+.msg.bot .bubble{background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.9);border-bottom-left-radius:4px;}
+.msg.user .bubble{background:var(--accent);color:var(--p);border-bottom-right-radius:4px;font-weight:500;}
+.msg-av{width:26px;height:26px;border-radius:50%;background:rgba(200,169,110,0.15);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--accent);font-weight:700;flex-shrink:0;}
+.qbtns{padding:.7rem 1.25rem;display:flex;gap:6px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,0.05);background:rgba(0,0,0,0.12);}
+.qbtn{font-size:12px;padding:5px 12px;border-radius:20px;border:1px solid rgba(200,169,110,0.3);color:var(--accent);background:transparent;cursor:pointer;transition:all .15s;font-family:'DM Sans',sans-serif;}
+.qbtn:hover{background:rgba(200,169,110,0.1);}
+.qbtn:disabled{opacity:.3;cursor:not-allowed;}
+.input-row{display:flex;gap:8px;padding:.85rem 1.25rem;border-top:1px solid rgba(255,255,255,0.05);}
+.input-row input{flex:1;border:1px solid rgba(200,169,110,0.2);border-radius:30px;padding:8px 16px;font-size:13px;background:rgba(255,255,255,0.05);color:var(--white);font-family:'DM Sans',sans-serif;}
+.input-row input::placeholder{color:rgba(255,255,255,0.25);}
+.send-btn{background:var(--accent);color:var(--p);border:none;border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:16px;flex-shrink:0;transition:all .2s;}
+.send-btn:hover{background:var(--accent2);}
+
+/* INCOME */
+#income-section{background:var(--p);}
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:1.75rem 0 1.5rem;}
+.pkg{border:1px solid rgba(255,255,255,0.1);border-radius:var(--r);padding:.85rem .75rem;text-align:center;cursor:pointer;transition:all .2s;background:rgba(255,255,255,0.03);}
+.pkg:hover{border-color:rgba(200,169,110,0.4);}
+.pkg.sel{border-color:var(--accent);background:rgba(200,169,110,0.1);}
+.pkg-name{font-size:14px;font-weight:500;}
+.pkg-price{font-size:11px;color:var(--muted);margin-top:3px;}
+.pkg-rate{font-size:12px;color:var(--accent);font-weight:500;margin-top:3px;}
+.income-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1.25rem;}
+.ic{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:var(--r);padding:1rem;}
+.ic-label{font-size:10px;color:var(--accent);letter-spacing:.6px;font-weight:500;text-transform:uppercase;margin-bottom:.5rem;}
+.ic-title{font-size:13px;font-weight:500;margin-bottom:.7rem;}
+.sl-row{display:flex;align-items:center;gap:8px;}
+.sl-row input[type=range]{flex:1;accent-color:var(--accent);}
+.sl-val{font-size:13px;font-weight:500;color:var(--accent);min-width:50px;text-align:right;}
+.ic-note{font-size:11px;color:var(--muted);margin-top:.4rem;}
+.total-box{background:rgba(45,155,111,0.1);border:1px solid rgba(45,155,111,0.25);border-radius:var(--r2);padding:1.5rem 1.75rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-top:.25rem;}
+.total-lbl{font-size:14px;color:var(--muted);}
+.total-disc{font-size:11px;color:rgba(255,255,255,0.35);margin-top:4px;}
+.total-amt{font-family:'Playfair Display',serif;font-size:2.2rem;color:#5dcaa5;font-weight:700;}
+
+/* ROADMAP */
+#roadmap-section{background:var(--p2);}
+.phase-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:1.75rem 0 1.25rem;}
+.ptab{font-size:12px;padding:6px 16px;border-radius:20px;border:1px solid rgba(200,169,110,0.2);color:var(--muted);background:transparent;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;}
+.ptab.on{background:var(--accent);color:var(--p);border-color:var(--accent);font-weight:500;}
+.ph{display:none;}
+.ph.on{display:block;}
+.tip{background:rgba(200,169,110,0.07);border-left:3px solid var(--accent);border-radius:0 var(--r) var(--r) 0;padding:.7rem 1rem;margin-bottom:1.25rem;font-size:13px;color:var(--muted);line-height:1.6;}
+.prog-lbl{font-size:12px;color:var(--muted);margin-bottom:.35rem;}
+.prog-bar{background:rgba(255,255,255,0.07);border-radius:20px;height:4px;overflow:hidden;margin-bottom:1.25rem;}
+.prog-fill{height:100%;background:var(--accent);border-radius:20px;transition:width .4s;}
+.steps{display:flex;flex-direction:column;gap:8px;}
+.sc{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:var(--r);padding:.85rem 1rem;cursor:pointer;transition:all .2s;}
+.sc:hover,.sc.done{border-color:rgba(45,155,111,0.35);background:rgba(45,155,111,0.05);}
+.sc-icon{width:34px;height:34px;border-radius:50%;background:rgba(200,169,110,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:var(--accent);}
+.sc.done .sc-icon{background:rgba(45,155,111,0.18);color:#5dcaa5;}
+.sc-title{font-size:13px;font-weight:500;}
+.sc-desc{font-size:12px;color:var(--muted);margin-top:3px;line-height:1.55;}
+.sc-tag{display:inline-block;font-size:10px;padding:2px 8px;border-radius:10px;margin-top:5px;font-weight:500;}
+.t-green{background:rgba(45,155,111,0.18);color:#5dcaa5;}
+.t-gold{background:rgba(200,169,110,0.15);color:var(--accent);}
+.chk{width:20px;height:20px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.18);background:transparent;cursor:pointer;flex-shrink:0;align-self:center;display:flex;align-items:center;justify-content:center;font-size:10px;color:transparent;transition:all .2s;}
+.chk.on{background:var(--green);border-color:var(--green);color:#fff;}
+
+/* FORM */
+#join-section{background:var(--p);}
+.form-wrap{max-width:540px;}
+.profile-bar{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:var(--r);padding:1rem 1.25rem;margin-bottom:1.75rem;}
+.pav{width:50px;height:50px;border-radius:50%;background:var(--accent);color:var(--p);font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Playfair Display',serif;}
+.pname{font-size:14px;font-weight:500;}
+.prole{font-size:12px;color:var(--muted);margin-top:2px;line-height:1.5;}
+.pills{display:flex;gap:6px;margin-top:5px;flex-wrap:wrap;}
+.pill{font-size:10px;font-weight:500;padding:2px 8px;border-radius:10px;}
+.pill-gold{background:rgba(200,169,110,0.18);color:var(--accent);}
+.pill-green{background:rgba(45,155,111,0.15);color:#5dcaa5;}
+.field{margin-bottom:.9rem;}
+.field label{display:block;font-size:11px;color:var(--muted);margin-bottom:.35rem;font-weight:500;letter-spacing:.4px;text-transform:uppercase;}
+.field input,.field select,.field textarea{width:100%;border:1px solid rgba(255,255,255,0.1);border-radius:var(--r);padding:9px 14px;font-size:13px;background:rgba(255,255,255,0.04);color:var(--white);font-family:'DM Sans',sans-serif;transition:border-color .2s;}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:rgba(200,169,110,0.5);}
+.field select option{background:var(--p);}
+.field textarea{resize:vertical;min-height:80px;line-height:1.6;}
+.opt-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:.4rem;}
+.opt{border:1px solid rgba(255,255,255,0.09);border-radius:var(--r);padding:.6rem .85rem;cursor:pointer;transition:all .2s;background:rgba(255,255,255,0.02);}
+.opt:hover{border-color:rgba(200,169,110,0.35);}
+.opt.sel{border-color:var(--accent);background:rgba(200,169,110,0.08);}
+.opt-t{font-size:12px;font-weight:500;}
+.opt-s{font-size:11px;color:var(--muted);margin-top:1px;}
+.sub-btn{width:100%;padding:.85rem;border-radius:30px;background:var(--accent);color:var(--p);font-size:14px;font-weight:500;border:none;cursor:pointer;margin-top:.5rem;transition:all .2s;font-family:'DM Sans',sans-serif;}
+.sub-btn:hover{background:var(--accent2);transform:translateY(-1px);}
+.sub-btn:disabled{opacity:.5;cursor:not-allowed;transform:none;}
+.success{display:none;background:rgba(45,155,111,0.09);border:1px solid rgba(45,155,111,0.25);border-radius:var(--r2);padding:2rem;text-align:center;}
+.success-icon{font-size:3rem;color:#5dcaa5;display:block;margin-bottom:.75rem;}
+.success h3{font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:.5rem;}
+.success p{font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:1.25rem;}
+.wa-btn{display:inline-flex;align-items:center;gap:8px;padding:.7rem 1.5rem;background:var(--green);color:#fff;border:none;border-radius:30px;font-size:14px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;}
+.wa-btn:hover{background:#1a7a54;}
+
+/* FOOTER */
+footer{background:var(--p2);border-top:1px solid var(--border);padding:2.5rem 1.5rem;text-align:center;}
+.ft-logo{font-family:'Playfair Display',serif;font-size:18px;color:var(--accent);margin-bottom:.5rem;}
+.ft-sub{font-size:12px;color:rgba(255,255,255,0.3);line-height:1.8;max-width:480px;margin:0 auto;}
+
+/* FADE */
+.fade{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease;}
+.fade.vis{opacity:1;transform:none;}
+
+@media(max-width:600px){
+  nav{padding:.75rem 1rem;}
+  .nav-links{display:none;}
+  section{padding:3.5rem 1.25rem;}
+  .pkg-grid{grid-template-columns:1fr;}
+  .income-grid{grid-template-columns:1fr;}
+  .opt-grid{grid-template-columns:1fr;}
+  .stats-row{gap:1.5rem;}
+  .total-box{flex-direction:column;align-items:flex-start;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">MIT × VKids</div>
+  <div class="nav-links">
+    <a href="#chat-section">了解我们</a>
+    <a href="#income-section">收入计算</a>
+    <a href="#roadmap-section">成交路径</a>
+    <a href="#join-section">联系 Jes</a>
+  </div>
+  <button class="nav-cta" onclick="scroll2('join-section')">开始我的第一步</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content fade">
+    <div class="hero-badge"><span class="hero-dot"></span>MIT Team · VKids Trend · Legend Ambassador</div>
+    <h1 class="hero-title">你的事业，<br/><em>从这里开始</em></h1>
+    <p class="hero-sub">不用老方法，不靠硬销售。一套经过10年验证的系统，带你建立真实的收入，走向属于你的自由。</p>
+    <div class="btn-row">
+      <a href="#chat-section" class="btn-gold">先了解一下</a>
+      <a href="#income-section" class="btn-ghost">算算我能赚多少</a>
+    </div>
+    <div class="stats-row">
+      <div class="stat"><div class="num">10K+</div><div class="lbl">学生受益</div></div>
+      <div class="stat"><div class="num">1,000+</div><div class="lbl">创业伙伴</div></div>
+      <div class="stat"><div class="num">10年</div><div class="lbl">系统验证</div></div>
+      <div class="stat"><div class="num">6位数</div><div class="lbl">收入实证</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- AI CHAT -->
+<section id="chat-section">
+  <div class="inner fade">
+    <div class="sec-badge">AI 助理</div>
+    <h2 class="sec-title">有什么想知道的？直接问</h2>
+    <p class="sec-sub">24小时在线，帮你解答关于系统、收入、起步的所有问题。</p>
+    <div class="gold-line"></div>
+    <div class="chat-box">
+      <div class="chat-hdr">
+        <div class="chat-av">MIT</div>
+        <div>
+          <div class="chat-hdr-name">MIT 事业助理</div>
+          <div class="chat-hdr-st"><span class="online-dot"></span>在线为你解答</div>
+        </div>
+      </div>
+      <div class="msgs" id="msgs">
+        <div class="msg bot">
+          <div class="msg-av">AI</div>
+          <div class="bubble">你好！我是 MIT 团队的 AI 助理 👋 无论你是想了解系统、想知道怎么赚钱、还是好奇这适不适合你——直接问我吧！</div>
+        </div>
+      </div>
+      <div class="qbtns">
+        <button class="qbtn" onclick="askQ('这个系统怎么赚钱？')">怎么赚钱？</button>
+        <button class="qbtn" onclick="askQ('我完全没经验，可以开始吗？')">没经验可以吗？</button>
+        <button class="qbtn" onclick="askQ('需要投入多少时间？')">要花多少时间？</button>
+        <button class="qbtn" onclick="askQ('第一步要做什么？')">第一步是什么？</button>
+      </div>
+      <div class="input-row">
+        <input type="text" id="chatInput" placeholder="有什么想知道的？直接问..." onkeydown="if(event.key==='Enter')sendChat()"/>
+        <button class="send-btn" onclick="sendChat()">➤</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INCOME CALCULATOR -->
+<section id="income-section">
+  <div class="inner fade">
+    <div class="sec-badge">收入计算器</div>
+    <h2 class="sec-title">你能赚多少？自己算出来</h2>
+    <p class="sec-sub">5种真实收入，数字基于官方市场计划。拉动滑块，看见你的可能性。</p>
+    <div class="gold-line"></div>
+
+    <div class="pkg-grid">
+      <div class="pkg sel" id="pkg-vp" onclick="setPkg('vp')">
+        <div class="pkg-name">V-Pro</div>
+        <div class="pkg-price">RM 2,388 · 9 e-Portals</div>
+        <div class="pkg-rate">零售利润 24%</div>
+      </div>
+      <div class="pkg" id="pkg-vm" onclick="setPkg('vm')">
+        <div class="pkg-name">V-Master</div>
+        <div class="pkg-price">RM 5,788 · 24 e-Portals</div>
+        <div class="pkg-rate">零售利润 31%</div>
+      </div>
+      <div class="pkg" id="pkg-ve" onclick="setPkg('ve')">
+        <div class="pkg-name">V-Expert</div>
+        <div class="pkg-price">RM 10,888 · 50 e-Portals</div>
+        <div class="pkg-rate">零售利润 37%</div>
+      </div>
+    </div>
+
+    <div class="income-grid">
+      <div class="ic">
+        <div class="ic-label">01 · Retail Profit</div>
+        <div class="ic-title">零售利润</div>
+        <div class="sl-row"><input type="range" min="0" max="20" step="1" value="5" id="deals" oninput="calc()"/><span class="sl-val" id="deals-out">5 单</span></div>
+        <div class="ic-note" id="r1-note">每单 RM 95 · 共 RM 475</div>
+      </div>
+      <div class="ic">
+        <div class="ic-label">02 · Intro Bonus</div>
+        <div class="ic-title">推荐奖金</div>
+        <div class="sl-row"><input type="range" min="0" max="10" step="1" value="2" id="intro" oninput="calc()"/><span class="sl-val" id="intro-out">2 人</span></div>
+        <div class="ic-note" id="r2-note">每人 RM 275 · 共 RM 550</div>
+      </div>
+      <div class="ic">
+        <div class="ic-label">03 · Network Bonus</div>
+        <div class="ic-title">网络奖金</div>
+        <div class="sl-row"><input type="range" min="0" max="30" step="1" value="5" id="network" oninput="calc()"/><span class="sl-val" id="net-out">5 单</span></div>
+        <div class="ic-note" id="r3-note">团队每单 RM 28 · 共 RM 140</div>
+      </div>
+      <div class="ic">
+        <div class="ic-label">04 · Product Compress Up</div>
+        <div class="ic-title">产品压缩奖金</div>
+        <div class="sl-row"><input type="range" min="0" max="20" step="1" value="3" id="compress" oninput="calc()"/><span class="sl-val" id="comp-out">3 单</span></div>
+        <div class="ic-note">L1–L3 各 RM 9 / 单</div>
+      </div>
+    </div>
+    <div class="ic" style="margin-bottom:1.25rem;">
+      <div class="ic-label">05 · Maintenance Compress Up</div>
+      <div class="ic-title">维护压缩奖金</div>
+      <div class="sl-row"><input type="range" min="0" max="50" step="1" value="10" id="maint" oninput="calc()"/><span class="sl-val" id="maint-out">10 人</span></div>
+      <div class="ic-note">L1 RM25 · L2 RM20 · L3–L5 RM10（客户月缴 RM198）</div>
+    </div>
+
+    <div class="total-box">
+      <div>
+        <div class="total-lbl">每月预估总收入</div>
+        <div class="total-disc">* 估算数字，实际视个人努力及市场情况而定</div>
+      </div>
+      <div style="text-align:right;">
+        <div class="total-amt" id="grand">RM 1,615</div>
+        <button class="btn-gold" style="margin-top:.75rem;font-size:13px;padding:.6rem 1.4rem;" onclick="scroll2('join-section')">我要开始 →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap-section">
+  <div class="inner fade">
+    <div class="sec-badge">成交路径</div>
+    <h2 class="sec-title">从加入到第一单</h2>
+    <p class="sec-sub">按照这个节奏走，新人 7–14 天内完成第一单不是梦。</p>
+    <div class="gold-line"></div>
+
+    <div class="phase-tabs">
+      <button class="ptab on" onclick="showPh(0,this)">第一阶段 · 起步</button>
+      <button class="ptab" onclick="showPh(1,this)">第二阶段 · 开口</button>
+      <button class="ptab" onclick="showPh(2,this)">第三阶段 · 成交</button>
+    </div>
+
+    <div class="ph on" id="ph0">
+      <div class="tip">目标：3天内完成。不要花太久"准备好"，先动起来！</div>
+      <div class="prog-lbl" id="pl0">完成 0 / 4</div>
+      <div class="prog-bar"><div class="prog-fill" id="pf0" style="width:0%"></div></div>
+      <div class="steps">
+        <div class="sc" id="s0-0"><div class="sc-icon">▶</div><div style="flex:1"><div class="sc-title">看完 1.0 起步视频（30分钟）</div><div class="sc-desc">建立正确思维。这是整个系统的地基，不跳过。</div><span class="sc-tag t-green">必做 · 第1天</span></div><div class="chk" onclick="chk(0,0)">✓</div></div>
+        <div class="sc" id="s0-1"><div class="sc-icon">★</div><div style="flex:1"><div class="sc-title">完成 1 对 1 新人 Coaching</div><div class="sc-desc">和你的上线坐下来，搞清楚名单方向和起步策略。</div><span class="sc-tag t-gold">关键 · 第1–2天</span></div><div class="chk" onclick="chk(0,1)">✓</div></div>
+        <div class="sc" id="s0-2"><div class="sc-icon">≡</div><div style="flex:1"><div class="sc-title">列出 30 个名单</div><div class="sc-desc">有孩子的家长、想改变的朋友、打工族女性。不筛选，先写出来。</div><span class="sc-tag t-green">快速行动 · 第2天</span></div><div class="chk" onclick="chk(0,2)">✓</div></div>
+        <div class="sc" id="s0-3"><div class="sc-icon">◎</div><div style="flex:1"><div class="sc-title">看懂产品基本知识（课程 2.0）</div><div class="sc-desc">至少能用 5 分钟讲清楚 VSchool 是什么。不需要完美。</div><span class="sc-tag t-gold">第3天</span></div><div class="chk" onclick="chk(0,3)">✓</div></div>
+      </div>
+    </div>
+
+    <div class="ph" id="ph1">
+      <div class="tip">邀约不是推销。你只是在帮他们看一个可能性。开口，才有机会。</div>
+      <div class="prog-lbl" id="pl1">完成 0 / 4</div>
+      <div class="prog-bar"><div class="prog-fill" id="pf1" style="width:0%"></div></div>
+      <div class="steps">
+        <div class="sc" id="s1-0"><div class="sc-icon">↗</div><div style="flex:1"><div class="sc-title">每天开口 3 个名单</div><div class="sc-desc">不是群发消息，是真实的一对一开口，自然引入话题。</div><span class="sc-tag t-green">每天执行</span></div><div class="chk" onclick="chk(1,0)">✓</div></div>
+        <div class="sc" id="s1-1"><div class="sc-icon">⚡</div><div style="flex:1"><div class="sc-title">发出这个 AI 页面暖身</div><div class="sc-desc">先把链接发给 prospect，让他们自己感受，再跟进聊。降低抗拒感。</div><span class="sc-tag t-gold">AI 辅助</span></div><div class="chk" onclick="chk(1,1)">✓</div></div>
+        <div class="sc" id="s1-2"><div class="sc-icon">◷</div><div style="flex:1"><div class="sc-title">约定 Presentation 时间</div><div class="sc-desc">不是"有空再说"，是给两个具体时间让他们选。锁定日期，成交率高 3 倍。</div><span class="sc-tag t-gold">关键动作</span></div><div class="chk" onclick="chk(1,2)">✓</div></div>
+        <div class="sc" id="s1-3"><div class="sc-icon">↺</div><div style="flex:1"><div class="sc-title">3-7-21 跟进机制</div><div class="sc-desc">没有即时回应不代表没有兴趣。第3、7、21天各跟进一次，不放弃。</div><span class="sc-tag t-gold">系统跟进</span></div><div class="chk" onclick="chk(1,3)">✓</div></div>
+      </div>
+    </div>
+
+    <div class="ph" id="ph2">
+      <div class="tip">成交不是结束，是开始。每一单背后，是一个家庭改变的起点。</div>
+      <div class="prog-lbl" id="pl2">完成 0 / 4</div>
+      <div class="prog-bar"><div class="prog-fill" id="pf2" style="width:0%"></div></div>
+      <div class="steps">
+        <div class="sc" id="s2-0"><div class="sc-icon">◈</div><div style="flex:1"><div class="sc-title">做完整 Presentation（课程 4.0）</div><div class="sc-desc">产品 + 市场计划 + 成交，三段走。不需要完美，需要真诚。</div><span class="sc-tag t-gold">核心技能</span></div><div class="chk" onclick="chk(2,0)">✓</div></div>
+        <div class="sc" id="s2-1"><div class="sc-icon">?</div><div style="flex:1"><div class="sc-title">处理常见 FAQ 不慌张</div><div class="sc-desc">"太贵了"、"没时间"、"再想想"——课程 2.4 和 3.4 都有答案。</div><span class="sc-tag t-green">提前准备</span></div><div class="chk" onclick="chk(2,1)">✓</div></div>
+        <div class="sc" id="s2-2"><div class="sc-icon">✎</div><div style="flex:1"><div class="sc-title">TTC Table Talk Closing</div><div class="sc-desc">10 分钟精华版成交话术（课程 3.2）。简单、自然、不用背稿。</div><span class="sc-tag t-gold">成交关键</span></div><div class="chk" onclick="chk(2,2)">✓</div></div>
+        <div class="sc" id="s2-3"><div class="sc-icon">🏆</div><div style="flex:1"><div class="sc-title">完成第一单，马上复盘</div><div class="sc-desc">和上线回顾：什么说得好？下次怎么更顺？成长就在这里。</div><span class="sc-tag t-green">里程碑</span></div><div class="chk" onclick="chk(2,3)">✓</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN FORM -->
+<section id="join-section">
+  <div class="inner fade">
+    <div class="sec-badge">联系我们</div>
+    <h2 class="sec-title">准备好迈出这一步了吗？</h2>
+    <p class="sec-sub">留下你的资料，Jes 会在 24 小时内亲自联系你，帮你找到最适合的起步方案。</p>
+    <div class="gold-line"></div>
+
+    <div class="form-wrap">
+      <div class="profile-bar">
+        <div class="pav">JT</div>
+        <div>
+          <div class="pname">Jes Tan</div>
+          <div class="prole">MIT Team · Legend Ambassador<br/>VKids Trend 10年实战经验</div>
+          <div class="pills">
+            <span class="pill pill-gold">六位数收入者</span>
+            <span class="pill pill-green">1,000+ 创业伙伴</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="form-body">
+        <div class="field"><label>你的名字</label><input type="text" id="f-name" placeholder="你叫什么名字？"/></div>
+        <div class="field"><label>WhatsApp 号码</label><input type="tel" id="f-wa" placeholder="例：012-3456789"/></div>
+        <div class="field">
+          <label>你目前的状况</label>
+          <select id="f-status">
+            <option value="">请选择...</option>
+            <option>全职上班族，想开始副业</option>
+            <option>全职妈妈，想有自己的收入</option>
+            <option>已经在做生意，想多一条线</option>
+            <option>刚辞职，在寻找新方向</option>
+            <option>其他</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>你最想解决的问题</label>
+          <div class="opt-grid">
+            <div class="opt" onclick="this.classList.toggle('sel')"><div class="opt-t">增加收入</div><div class="opt-s">想要额外的钱</div></div>
+            <div class="opt" onclick="this.classList.toggle('sel')"><div class="opt-t">时间自由</div><div class="opt-s">不想被工时绑死</div></div>
+            <div class="opt" onclick="this.classList.toggle('sel')"><div class="opt-t">建立事业</div><div class="opt-s">想有属于自己的</div></div>
+            <div class="opt" onclick="this.classList.toggle('sel')"><div class="opt-t">经济独立</div><div class="opt-s">不依赖任何人</div></div>
+          </div>
+        </div>
+        <div class="field"><label>你有什么想问 Jes 的？（选填）</label><textarea id="f-msg" placeholder="有什么疑问或顾虑，直接写出来..."></textarea></div>
+        <button class="sub-btn" id="sub-btn" onclick="submitForm()">发送给 Jes</button>
+      </div>
+
+      <div class="success" id="success-box">
+        <span class="success-icon">✓</span>
+        <h3>已收到！Jes 会尽快联系你</h3>
+        <p>通常在 24 小时内回复。<br/>你也可以直接 WhatsApp 她，更快得到回应。</p>
+        <button class="wa-btn" onclick="openWA()">📱 直接 WhatsApp Jes</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-logo">MIT × VKids Trend</div>
+  <p class="ft-sub">Legend Ambassador · Jes Tan<br/>帮助 10K+ 学生学习，1,000+ 伙伴创业，改变和提升生活。<br/><br/>* 收入数字为估算，实际视个人努力及市场情况而定，非保证收入。</p>
+</footer>
+
+<script>
+function scroll2(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
+
+// FADE IN
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis');});},{threshold:0.12});
+document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+
+// AI CHAT
+const SYS=`你是 MIT VKids Trend 团队的 AI 事业助理。帮助还没加入的人了解这个平台，激发他们的好奇心和行动欲望。
+
+关于 MIT 团队：
+- 网络教育创业平台，产品是 VSchool/VKids 儿童学习系统（售价 RM388，E-Codes 终身有效）
+- 领袖 Jes Tan，前酒店管理，10年创业经验，六位数收入，Legend Ambassador
+- 帮助超过 10,000 名学生，超过 1000 人开始创业
+- 3个套餐：V-Pro(RM2388/9portals)、V-Master(RM5788/24portals)、V-Expert(RM10888/50portals)
+- 5种收入：零售利润、Intro Bonus、Network Bonus、Product Compress Up、Maintenance Compress Up
+- 新人系统：加入→FB Group→30分钟视频→1对1 coaching→90天计划
+- 特别鼓励女性经济独立，帮助打工族建立副业
+
+回答风格：简短有力不超过4句，真实有温度，激发好奇心，用简体中文，适当建议联系 Jes。不要承诺具体收入数字。`;
+
+const hist=[];
+async function callAI(q){
+  hist.push({role:'user',content:q});
+  try{
+    const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:SYS,messages:hist})});
+    const d=await r.json();
+    const reply=d.content?.map(b=>b.text||'').join('')||'建议你直接联系 Jes 了解更多！';
+    hist.push({role:'assistant',content:reply});
+    return reply;
+  }catch{return '现在有点忙，建议你直接联系 Jes 了解详情！';}
+}
+function addMsg(text,who){
+  const box=document.getElementById('msgs');
+  const d=document.createElement('div');d.className='msg '+who;
+  const av=document.createElement('div');av.className='msg-av';av.textContent=who==='bot'?'AI':'你';
+  const b=document.createElement('div');b.className='bubble';b.textContent=text;
+  if(who==='bot'){d.appendChild(av);d.appendChild(b);}else{d.appendChild(b);d.appendChild(av);}
+  box.appendChild(d);box.scrollTop=box.scrollHeight;
+}
+function showTyping(){
+  const box=document.getElementById('msgs');
+  const d=document.createElement('div');d.id='typing';d.className='msg bot';
+  const av=document.createElement('div');av.className='msg-av';av.textContent='AI';
+  const b=document.createElement('div');b.className='bubble';b.textContent='...';
+  d.appendChild(av);d.appendChild(b);box.appendChild(d);box.scrollTop=box.scrollHeight;
+}
+function hideTyping(){const t=document.getElementById('typing');if(t)t.remove();}
+function setDis(v){document.getElementById('chatInput').disabled=v;document.querySelectorAll('.qbtn,.send-btn').forEach(b=>b.disabled=v);}
+async function askQ(q){setDis(true);addMsg(q,'user');showTyping();const r=await callAI(q);hideTyping();addMsg(r,'bot');setDis(false);}
+async function sendChat(){const i=document.getElementById('chatInput');const q=i.value.trim();if(!q)return;i.value='';await askQ(q);}
+
+// INCOME CALC
+const PKG={
+  vp:{profit:95,ipp:275,imax:550,npd:28,nmax:140},
+  vm:{profit:119,ipp:466,imax:1400,npd:66,nmax:400},
+  ve:{profit:143,ipp:650,imax:2600,npd:116,nmax:700}
+};
+let curP='vp';
+function setPkg(p){
+  curP=p;
+  ['vp','vm','ve'].forEach(k=>document.getElementById('pkg-'+k).classList.toggle('sel',k===p));
+  calc();
+}
+function calc(){
+  const pk=PKG[curP];
+  const deals=+document.getElementById('deals').value;
+  const intro=+document.getElementById('intro').value;
+  const net=+document.getElementById('network').value;
+  const comp=+document.getElementById('compress').value;
+  const maint=+document.getElementById('maint').value;
+  document.getElementById('deals-out').textContent=deals+' 单';
+  document.getElementById('intro-out').textContent=intro+' 人';
+  document.getElementById('net-out').textContent=net+' 单';
+  document.getElementById('comp-out').textContent=comp+' 单';
+  document.getElementById('maint-out').textContent=maint+' 人';
+  const r1=deals*pk.profit;
+  const r2=Math.min(intro*pk.ipp,pk.imax);
+  const r3=Math.min(net*pk.npd,pk.nmax);
+  const r4=comp*9;
+  const r5=maint*25;
+  document.getElementById('r1-note').textContent='每单 RM '+pk.profit+' · 共 RM '+r1.toLocaleString();
+  document.getElementById('r2-note').textContent='每人 RM '+pk.ipp+' · 共 RM '+r2.toLocaleString();
+  document.getElementById('r3-note').textContent='团队每单 RM '+pk.npd+' · 共 RM '+r3.toLocaleString();
+  document.getElementById('grand').textContent='RM '+(r1+r2+r3+r4+r5).toLocaleString();
+}
+calc();
+
+// ROADMAP
+const ST=[[false,false,false,false],[false,false,false,false],[false,false,false,false]];
+function chk(ph,idx){
+  ST[ph][idx]=!ST[ph][idx];
+  document.getElementById('s'+ph+'-'+idx).classList.toggle('done',ST[ph][idx]);
+  document.getElementById('s'+ph+'-'+idx).querySelector('.chk').classList.toggle('on',ST[ph][idx]);
+  const done=ST[ph].filter(Boolean).length;
+  document.getElementById('pl'+ph).textContent='完成 '+done+' / 4';
+  document.getElementById('pf'+ph).style.width=Math.round(done/4*100)+'%';
+}
+function showPh(i,btn){
+  document.querySelectorAll('.ph').forEach((b,j)=>b.classList.toggle('on',j===i));
+  document.querySelectorAll('.ptab').forEach(t=>t.classList.remove('on'));
+  btn.classList.add('on');
+}
+
+// FORM
+function submitForm(){
+  const name=document.getElementById('f-name').value.trim();
+  const wa=document.getElementById('f-wa').value.trim();
+  const status=document.getElementById('f-status').value;
+  if(!name||!wa||!status){alert('请填写名字、WhatsApp 号码和你的状况');return;}
+  const btn=document.getElementById('sub-btn');
+  btn.disabled=true;btn.textContent='发送中...';
+  setTimeout(()=>{
+    document.getElementById('form-body').style.display='none';
+    document.getElementById('success-box').style.display='block';
+  },800);
+}
+function openWA(){
+  const name=document.getElementById('f-name').value.trim()||'你好';
+  const msg=encodeURIComponent('你好 Jes！我是 '+name+'，我看了你的 MIT 团队介绍，想了解更多关于加入的详情。');
+  window.open('https://wa.me/60124257150?text='+msg,'_blank');
+}
+</script>
+</body>
+</html>
