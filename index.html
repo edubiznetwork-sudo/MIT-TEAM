@@ -549,13 +549,27 @@ function submitForm(){
   const name=document.getElementById('f-name').value.trim();
   const wa=document.getElementById('f-wa').value.trim();
   const status=document.getElementById('f-status').value;
+  const msg_extra=document.getElementById('f-msg').value.trim();
   if(!name||!wa||!status){alert('请填写名字、WhatsApp 号码和你的状况');return;}
+  const goals=[];
+  document.querySelectorAll('.opt.sel .opt-t').forEach(el=>goals.push(el.textContent));
   const btn=document.getElementById('sub-btn');
-  btn.disabled=true;btn.textContent='发送中...';
+  btn.disabled=true;btn.textContent='正在跳转 WhatsApp...';
+  const waMsg=
+    '你好 Jes！👋\n\n'+
+    '我刚看了你的 MIT 团队介绍，想了解更多详情。\n\n'+
+    '📌 我的资料：\n'+
+    '• 名字：'+name+'\n'+
+    '• 电话：'+wa+'\n'+
+    '• 状况：'+status+'\n'+
+    (goals.length?'• 我想解决：'+goals.join('、')+'\n':'')+
+    (msg_extra?'• 我想问：'+msg_extra+'\n':'')+
+    '\n期待你的回复！';
   setTimeout(()=>{
     document.getElementById('form-body').style.display='none';
     document.getElementById('success-box').style.display='block';
-  },800);
+    window.open('https://wa.me/60124257150?text='+encodeURIComponent(waMsg),'_blank');
+  },600);
 }
 function openWA(){
   const name=document.getElementById('f-name').value.trim()||'你好';
